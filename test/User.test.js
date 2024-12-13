@@ -1,6 +1,6 @@
 const { auth } = require("./../src/user.js");
 
-beforEach(() => {
+beforeEach(() => {
     jest.resetAllMocks();
     global.localStorage = {};
     global.localStorage.addItem = jest.fn();
