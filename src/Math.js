@@ -34,9 +34,9 @@ function checkNumber(number) {
     if(typeof number !== "number"){
         throw new Error("pas un nombre");
     }
-    let result = { integer: false, positive: false, even: null };
-    if (parseInt(number) === number) {
-        result.integer = true;
+    let result = { decimal: false, positive: false, even: null };
+    if (parseInt(number) !== number) {
+        result.decimal = true;
     }
     if (number >= 0) {
         result.positive = true;
