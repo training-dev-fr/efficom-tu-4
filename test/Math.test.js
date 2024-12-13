@@ -26,18 +26,23 @@ describe('When i try to calculate the quotient of two numbers', () => {
         expect(divide(15.5, 5)).toBeCloseTo(3.1);
     });
 
-    test('with 0 as dividend, then i should get an infinite result', () => {
-        expect(divide(10, 0)).toBe(Infinity);
+    test('with 0 as dividend, then i should get an error', () => {
+        expect(() => divide(10, 0)).toThrow("Cannot divide by 0");
     });
+
+    test('with a string, then i should get an error', () => {
+        expect(() => divide("10", "a")).toThrow("veuillez saisir des nombres");
+    });
+    
 });
 
 
 describe('When i try to calculate with strings', () => {
 
     test('with addition', () => {
-        expect(() => sum('1', 5)).toThrow("Params must be of type number");
-        expect(() => sum(-20, '4')).toThrow("Params must be of type number");
-        expect(() => sum('15.5', '5')).toThrow("Params must be of type number");
+        expect(() => sum('1', 5)).toThrow("veuillez saisir des nombres");
+        expect(() => sum(-20, '4')).toThrow("veuillez saisir des nombres");
+        expect(() => sum('15.5', '5')).toThrow("veuillez saisir des nombres");
     });
 
 });

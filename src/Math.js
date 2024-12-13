@@ -32,7 +32,7 @@ const divide = (dividend, divisor) => {
 
 function checkNumber(number) {
     if(typeof number !== "number"){
-        throw new Error("pas un nombre");
+        throw new Error("Param must be a number");
     }
     let result = { decimal: false, positive: false, even: null };
     if (parseInt(number) !== number) {
@@ -41,7 +41,7 @@ function checkNumber(number) {
     if (number >= 0) {
         result.positive = true;
     }
-    if (result.integer) {
+    if (!result.decimal) {
         if (number % 2 === 0) {
             result.even = true;
         } else {
