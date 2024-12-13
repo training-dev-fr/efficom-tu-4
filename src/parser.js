@@ -17,7 +17,7 @@ const executeExpression = (expression) => {
     if(divExpression !== null){
         return divide(parseInt(divExpression[1]),parseInt(divExpression[2]));
     }
-    return new Error("expression parse failed")
+    throw new Error("expression parse failed")
 }
 
 module.exports = { executeExpression };
