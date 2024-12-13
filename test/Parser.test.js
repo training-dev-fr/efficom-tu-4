@@ -8,9 +8,7 @@ jest.mock('./../src/math.js',() => ({
 
 describe("When i try to parse an expression,",() => {
     test("With a sum expression, then i should call the sum function",() => {
-
-
-        let result = executeExpression("20+5");
+        let result = executeExpression("2+5");
         expect(sum).toHaveBeenCalledTimes(1);
     });
 })
