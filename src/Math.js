@@ -26,7 +26,7 @@ const divide = (dividend, divisor) => {
     if (divisor > 0) {
         return dividend / divisor;
     } else {
-        return false
+        return new Error("Cannot divide by 0")
     }
 }
 
