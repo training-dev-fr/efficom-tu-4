@@ -52,4 +52,4 @@ function checkNumber(number) {
 }
 
 
-module.exports = { sum, substract,multiply, divide, checkNumber,executeExpression };
+module.exports = { sum, substract,multiply, divide, checkNumber };
