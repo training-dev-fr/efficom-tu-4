@@ -1,26 +1,26 @@
 const sum = (a, b) => {
-    if (isNaN(a) || isNaN(b)) {
+    if (typeof a !== "number" || typeof b !== "number") {
         return new Error("veuillez saisir des nombres");
     }
     return a + b;
 }
 
 const substract = (a, b) => {
-    if (isNaN(a) || isNaN(b)) {
+    if (typeof a !== "number" || typeof b !== "number") {
         return new Error("veuillez saisir des nombres");
     }
     return a - b;
 }
 
 const multiply = (a, b) => {
-    if (isNaN(a) || isNaN(b)) {
+    if (typeof a !== "number" || typeof b !== "number") {
         return new Error("veuillez saisir des nombres");
     }
     return a * b;
 }
 
 const divide = (dividend, divisor) => {
-    if (isNaN(dividend) || isNaN(divisor)) {
+    if (typeof dividend !== "number" || typeof divisor !== "number") {
         return new Error("veuillez saisir des nombres");
     }
     if (divisor > 0) {
@@ -31,7 +31,7 @@ const divide = (dividend, divisor) => {
 }
 
 function checkNumber(number) {
-    if(isNaN(number)){
+    if(typeof number !== "number"){
         throw new Error("pas un nombre");
     }
     let result = { integer: false, positiv: false, even: null };
