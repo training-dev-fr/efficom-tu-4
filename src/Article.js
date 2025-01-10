@@ -1,4 +1,4 @@
-export default class Article{
+class Article{
     constructor(id,price,quantity){
         this.id = id;
         this.price = price;
@@ -6,3 +6,5 @@ export default class Article{
         this.stock = 3;
     }
 }
+
+module.exports = Article;
