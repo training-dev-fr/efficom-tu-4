@@ -51,5 +51,12 @@ function checkNumber(number) {
     return result;
 }
 
+function isEven(number){
+    if(parseInt(number) !== number){
+        throw new Error("number must be a non decimal number");
+    }
+    return number %2 === 0;
+}
 
-module.exports = { sum, substract,multiply, divide, checkNumber };
+
+module.exports = { sum, substract,multiply, divide, checkNumber, isEven };

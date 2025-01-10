@@ -1,4 +1,4 @@
-const { sum, divide, multiply, substract, checkNumber } = require("../src/Math");
+const { sum, divide, multiply, substract, checkNumber, isEven } = require("../src/Math");
 
 test('When i try to calculate the sum of two numbers, then i should get the sum result', () => {
     expect(sum(1, 5)).toBe(6);
@@ -84,3 +84,19 @@ describe('When i checkNumber', () => {
     });
 })
 
+describe("When i try to verify if a number is even", () => {
+    test("with a even number, then i should have true",() => {
+        let result = isEven(4);
+        expect(result).toBe(true)
+    });
+    test("with a odd number, then i should have false",() => {
+        let result = isEven(17);
+        expect(result).toBe(false)
+    });
+    test("with a decimal number, then i should have an error",() => {
+        expect(()=> isEven(4.5)).toThrow("number must be a non decimal number");
+    });
+    test("with a string, then i should have an error",() => {
+        expect(() =>  isEven("4")).toThrow("number must be a non decimal number");
+    });
+})

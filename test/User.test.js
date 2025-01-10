@@ -25,7 +25,16 @@ describe("When i try to authentified", () => {
         expect(global.fetch).toHaveBeenCalled();
         expect(spyStorage).toHaveBeenCalled();
     });
-    test("and the api return an ko response, then i should have an error", () => {
+    test("and the api return an ko response, then i should have an error",async () => {
+        global.fetch = jest.fn();
+        global.fetch.mockResolvedValue({
+            json: jest.fn().mockResolvedValue({
+                message : "Invalid credentials" 
+            }),
+            ok: false
+        });
+        expect(async () => await auth("avaast", "wrongpassword")).rejects.toThrow("Invalid credentials");
+        expect(global.fetch).toHaveBeenCalled();
 
     });
 })
