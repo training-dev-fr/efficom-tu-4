@@ -3,5 +3,6 @@ export default class Article{
         this.id = id;
         this.price = price;
         this.quantity = quantity;
+        this.stock = 3;
     }
 }
